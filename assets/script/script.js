@@ -7,6 +7,11 @@ const nav_container = document.querySelector('.nav-links-container')
 const header_main = document.getElementsByTagName('nav')[0];
 
 
+
+window.addEventListener('scroll',()=>{
+    setShadow()
+})
+
 home.addEventListener('click',()=>{
     activeHome()
     nav_container.classList.toggle('nav-active')
@@ -28,6 +33,8 @@ portfolio.addEventListener('click',()=>{
 menu_button.addEventListener('click',()=>{
     nav_container.classList.toggle('nav-active')
 })
+
+
 function setShadow(){
 if(window.scrollY >= 100){
     header_main.classList.add('bottom-shadow')
@@ -37,7 +44,9 @@ if(window.scrollY >= 100){
 }
 
 
-
+function showError(){
+    alert("Currently not available")
+}
 
 
 

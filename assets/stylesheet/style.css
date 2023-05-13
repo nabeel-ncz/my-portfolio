@@ -11,7 +11,7 @@
     --gold:#23221f56;
     --deer:#100d08;
     --gold--dark: #100d0892;
-    --gold--light:rgb(255, 252, 240);
+    --gold--light:#f5fefd;
 }
 body {
     font-family: 'Oswald', sans-serif;
@@ -74,17 +74,19 @@ a:hover {
     display: none;
 }
 @media (max-width: 858px) {
+    #home{
+        margin-top: 60px;
+    }
     .checkbtn {
         display: block;
         position: absolute;
         right: 40px;
     }
-
     .nav-links-container {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: rgba(255, 252, 240, 0.785);
+        background: #eff7f6d4;
         backdrop-filter: blur(4px);
         top: 80px;
         left: -100%;
@@ -313,7 +315,8 @@ main banner starts
     justify-content: flex-start;
     overflow-x: scroll;
     white-space: nowrap;
-    gap: 12px;
+    gap: 14px;
+    padding: 10px 10px;
 }
 .projects-container .cards::-webkit-scrollbar{
     display: none;
@@ -322,12 +325,42 @@ main banner starts
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid var(--gold--dark);
-    padding: 10px 6px;
+    padding: 14px 10px;
     border-radius: 8px;
+    border: none;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2);
+}
+.projects-container .cards .card .card-description h6{
+    font-size: 14px;
+}
+.projects-container .cards .card .card-description p{
+    font-size: 10px;
+}
+.cards .card .link-item{
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    justify-content: flex-start;
+    margin-top: 2px;
+}
+.cards .card .link-item a{
+    font-size: 15px;
+    text-decoration: none;
+    color: #8200be;
+    letter-spacing: 0.05em;
+}
+.cards .card .link-item i{
+    font-size: 20px;
+    color: rgb(146, 146, 146);
 }
 .projects-container .cards .card img{
     width: 240px;
+}
+.cards .card .link-item a:hover~.link-icon-card{
+    background: -webkit-linear-gradient(#0300c2, #a200bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 1s ease-in-out;
 }
 /* portfolio ends */
 
@@ -422,7 +455,7 @@ footer{
     margin-top: 100px;
     width: 100%;
     padding: 16px 160px 10px 160px;
-    background-color: rgb(254, 247, 220);
+    background-color: var(--gold--light);
 }
 footer .footer-container{
     display: flex;
@@ -452,6 +485,15 @@ footer .social-media-container{
 footer .social-media-container i{
     font-size: 24px;
 }
+.social-media-container a i{
+    color: #29344fb7;
+}
+.social-media-container a i:hover{
+    background: -webkit-linear-gradient(#0300c2, #a200bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 1s;
+}
 .footer-container .copyrights{
     display: flex;
     justify-content: center;
@@ -462,6 +504,13 @@ footer .social-media-container i{
 
 /* ---responsive--- */
 @media only screen and (max-width: 576px) {
+    nav{
+        width: 100vw;
+    }
+    .nav-links-container{
+        width: 100vw;
+        height: 100%;
+    }
     nav .logo{
         display: none;
     }
@@ -501,6 +550,10 @@ footer .social-media-container i{
     }
     .projects-container .cards .card img{
         width: 170px;
+    }
+    .projects-container .cards{
+        width: 100vw;
+        padding: 10px 20px;
     }
     .contact-section{
         margin-top:30px;
