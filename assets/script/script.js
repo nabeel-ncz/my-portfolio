@@ -4,9 +4,11 @@ let about = document.getElementById('about_link')
 let portfolio = document.getElementById('portfolio_link')
 const menu_button = document.getElementById('check')
 const nav_container = document.querySelector('.nav-links-container')
-const header_main = document.getElementsByTagName('nav')[0];
-
-
+const header_main = document.getElementsByTagName('header')[0];
+const close = document.getElementById('close-btn')
+const connect_btn = document.getElementById('connect-btn')
+const sm_container = document.querySelector('.active-social-media')
+const connect_btn_arrow = document.getElementById('connect-btn-arrow')
 
 window.addEventListener('scroll',()=>{
     setShadow()
@@ -28,11 +30,25 @@ portfolio.addEventListener('click',()=>{
     activePorfolio()
     nav_container.classList.toggle('nav-active')
 })
+close.addEventListener('click',()=>{
+    nav_container.classList.remove('nav-active')
+})
 
+connect_btn.addEventListener('click',()=>{
+    sm_container.classList.toggle('active-sm-plus')
+    if(connect_btn_arrow.classList.contains('bxs-chevron-left')){
+        connect_btn_arrow.classList.add('bxs-chevron-right')
+        connect_btn_arrow.classList.remove('bxs-chevron-left')
+    }else{
+        connect_btn_arrow.classList.remove('bxs-chevron-right')
+        connect_btn_arrow.classList.add('bxs-chevron-left')
+    }
+})
 
 menu_button.addEventListener('click',()=>{
     nav_container.classList.toggle('nav-active')
 })
+
 
 
 function setShadow(){
